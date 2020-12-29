@@ -7,23 +7,31 @@
   <title>Network Request Exercise</title>
 </head>
 <body>
-  <section class="inputs">
-    <article class="user-display">
-      <p class="info-display">info display</p>
+  <section class="nav">
+    <article class="inputs">
+      <label for="api-selector">Which API Would You Like to View?</label>
+      <select name="api-selector" id="api-selector">
+        <option value="users">Users</option>
+        <option value="Sports">Sports</option>
+        <option value="Animals">Animals</option>
+      </select>
+      <label for="id-input">ID</label>
+      <input type="number" class="id-input" max="10" min="0">
+      <label for="name-input">Name</label>
+      <input type="text" class="name-input">
+      <label for="status-input">Status</label>
+      <input type="text" class="status-input">
+      <label for="interests-input">Interests</label>
+      <input type="text" class="interests-input">
     </article>
-    <label for="id-input">User ID</label>
-    <input type="number" class="id-input" max="10" min="0">
-    <label for="name-input">User Name</label>
-    <input type="text" class="name-input">
-    <label for="status-input">User Status</label>
-    <input type="text" class="status-input">
-    <label for="interests-input">User Interests</label>
-    <input type="text" class="interests-input">
+    <article class="buttons">
+      <button class="post-button">Add Info</button>
+      <button class="delete-button">Delete Info by ID</button>
+      <button class="get-user">Find Info by ID</button>
+    </article>
   </section>
-  <section class="buttons">
-    <button class="post-button">Add User</button>
-    <button class="delete-button">Delete User by ID</button>
-    <button class="get-user">Find User by ID</button>
+  <section class="user-display">
+    <p class="info-display">info display</p>
   </section>
   <script type="text/javascript" src="./script.js"></script>
 </body>
