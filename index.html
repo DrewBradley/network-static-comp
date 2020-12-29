@@ -12,9 +12,12 @@
       <label for="api-selector">Which API Would You Like to View?</label>
       <select name="api-selector" id="api-selector">
         <option value="users">Users</option>
-        <option value="Sports">Sports</option>
-        <option value="Animals">Animals</option>
+        <option value="sport-teams">Sports</option>
+        <option value="animals">Animals</option>
       </select>
+      <article class="buttons">
+        <button class="api-selector-button">Show API Data</button>
+      </article>
       <label for="id-input">ID</label>
       <input type="number" class="id-input" max="10" min="0">
       <label for="name-input">Name</label>
@@ -30,8 +33,11 @@
       <button class="get-user">Find Info by ID</button>
     </article>
   </section>
-  <section class="user-display">
-    <p class="info-display">info display</p>
+  <section class="info-display">
+    <h2 class="info-display-header">API Information Display</h2>
+    <article class="card">
+    </article>
+    
   </section>
   <script type="text/javascript" src="./script.js"></script>
 </body>
