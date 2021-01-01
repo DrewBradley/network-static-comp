@@ -51,7 +51,7 @@ const showError = (error) => {
 }
 
 const showData = (data) => {
-  infoDisplay.innerHTML = `<h2 class="info-display-header">${currentApi} API Information Display</h2>`;
+  infoDisplay.innerHTML = `<h2 class="info-display-header">${currentApi.toUpperCase()} API Information Display</h2>`;
   if (currentApi === "users") {
     data.forEach(data => showUser(data))
   } else if (currentApi === "sport-teams") {
@@ -67,7 +67,7 @@ const showUser = (data) => {
       <h2 class="card-name">${data.name}</h2>
       <p class="card-id">ID: ${data.id}</p>
       <p class="card-interests">INTERESTS: ${data.interests}</p>
-      <p class="card-interests">STATUS: ${data.status}</p>
+      <p class="card-status">STATUS: ${data.status}</p>
     </article>
     `
 }
@@ -78,7 +78,7 @@ const showTeam = (data) => {
       <h2 class="card-name">${data.name}</h2>
       <p class="card-id">ID: ${data.id}</p>
       <p class="card-interests">COACH: ${data.head_coach}</p>
-      <p class="card-interests">SPORT: ${data.sport}</p>
+      <p class="card-status">SPORT: ${data.sport}</p>
     </article>
     `
 }
@@ -88,8 +88,8 @@ const showAnimal = (data) => {
     <article class="card grid${data.id}">
       <h2 class="card-name">${data.name}</h2>
       <p class="card-id">ID: ${data.id}</p>
-      <p class="card-diet">DIET: ${data.diet}</p>
-      <p class="card-fact">FACT: ${data.fun_fact}</p>
+      <p class="card-interests">DIET: ${data.diet}</p>
+      <p class="card-status">FACT: ${data.fun_fact}</p>
     </article>
     `
 }
