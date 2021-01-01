@@ -14,6 +14,8 @@ const showApiButton = document.querySelector('.api-selector-button')
 const addInfoInputs = document.querySelector('.inputs-add-info')
 
 let currentApi
+let extraInfo1;
+  let extraInfo2;
 
 const resetInputs = () => {
   idInput.value = "";
@@ -27,13 +29,19 @@ const addInfo = () => {
   addInfoInputs.classList.toggle('hidden');
   addButton.classList.toggle('hidden');
   postButton.classList.toggle('hidden');
-  if (currentApi === "sport-teams") {
-    statusInputLabel.innerText = 'Coach'
-    interestsInputLabel.innerText = 'Sport'
-  } else if (currentApi === "animals") {
-    statusInputLabel.innerText = 'Diet'
-    interestsInputLabel.innerText = 'Fact'
+  if (currentApi === "users") {
+    extraInfo1 = 'Status'
+    extraInfo2 = 'Interests'
   }
+  else if (currentApi === "sport-teams") {
+    extraInfo1 = 'Coach'
+    extraInfo2 = 'Sport'
+  } else if (currentApi === "animals") {
+    extraInfo1 = 'Diet'
+    extraInfo2 = 'Fact'
+  }
+  statusInputLabel.innerText = extraInfo1;
+  interestsInputLabel.innerText = extraInfo2;
 }
 
 const showError = (error) => {
@@ -114,17 +122,20 @@ const getInfoById = () => {
 }
 
 const postInfo = () => {
+  let infoObject = {
+    id: idInput.value,
+    name: nameInput.value,
+    status: statusInput.value,
+    interests: interestsInput.value
+  }
   fetch(`http://localhost:3001/api/v1/${currentApi}`, {
       method: 'POST',
       headers: {
         'Content-type': 'application/json'
       },
-      body: JSON.stringify({
-        id: idInput.value,
-        name: nameInput.value,
-        status: statusInput.value,
-        interests: interestsInput.value
-      })
+      body: JSON.stringify(
+        infoObject
+      )
     })
     .then(response => response.json())
     .then(data => getData(data));
