@@ -26,6 +26,11 @@ body {
   flex-direction: column;
 }
 
+.inputs-add-info {
+  display: flex;
+  flex-direction: column;
+}
+
 label {
   margin-top: 5%;
 }

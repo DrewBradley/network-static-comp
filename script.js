@@ -2,21 +2,38 @@ const infoDisplay = document.querySelector('.info-display')
 const idInput = document.querySelector('.id-input')
 const nameInput = document.querySelector('.name-input')
 const statusInput = document.querySelector('.status-input')
+const statusInputLabel = document.querySelector('.status-input-label')
 const interestsInput = document.querySelector('.interests-input')
+const interestsInputLabel = document.querySelector('.interests-input-label')
 const postButton = document.querySelector('.post-button')
+const addButton = document.querySelector('.add-info-button')
 const deleteButton = document.querySelector('.delete-button')
 const getButton = document.querySelector('.get-user')
 const apiSelector = document.querySelector('#api-selector')
 const showApiButton = document.querySelector('.api-selector-button')
+const addInfoInputs = document.querySelector('.inputs-add-info')
 
 let currentApi
 
 const resetInputs = () => {
-  apiSelector.value = "";
   idInput.value = "";
   nameInput.value = "";
   statusInput.value = "";
   interestsInput.value = "";
+}
+
+const addInfo = () => {
+  currentApi = apiSelector.value;
+  addInfoInputs.classList.toggle('hidden');
+  addButton.classList.toggle('hidden');
+  postButton.classList.toggle('hidden');
+  if (currentApi === "sport-teams") {
+    statusInputLabel.innerText = 'Coach'
+    interestsInputLabel.innerText = 'Sport'
+  } else if (currentApi === "animals") {
+    statusInputLabel.innerText = 'Diet'
+    interestsInputLabel.innerText = 'Fact'
+  }
 }
 
 const showError = (error) => {
@@ -128,3 +145,4 @@ showApiButton.addEventListener('click', getData)
 postButton.addEventListener('click', postInfo)
 deleteButton.addEventListener('click', deleteUser)
 getButton.addEventListener('click', getInfoById)
+addButton.addEventListener('click', addInfo)

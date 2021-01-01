@@ -9,35 +9,35 @@
 <body>
   <section class="nav">
     <article class="inputs">
-      <label for="api-selector">Which API Would You Like to View?</label>
-      <select name="api-selector" id="api-selector">
-        <option value="users">Users</option>
-        <option value="sport-teams">Sports</option>
-        <option value="animals">Animals</option>
-      </select>
       <article class="buttons">
+        <label for="api-selector">Which API Would You Like to View?</label>
+        <select name="api-selector" id="api-selector">
+          <option value="users">Users</option>
+          <option value="sport-teams">Sports</option>
+          <option value="animals">Animals</option>
+        </select>
         <button class="api-selector-button">Show API Data</button>
       </article>
       <label for="id-input">ID</label>
       <input type="number" class="id-input" max="10" min="0">
-      <label for="name-input">Name</label>
-      <input type="text" class="name-input">
-      <label for="status-input">Status</label>
-      <input type="text" class="status-input">
-      <label for="interests-input">Interests</label>
-      <input type="text" class="interests-input">
+      <article class="inputs-add-info hidden">
+        <label for="name-input">Name</label>
+        <input type="text" class="name-input">
+        <label for="status-input" class="status-input-label">Status</label>
+        <input type="text" class="status-input">
+        <label for="interests-input" class="interests-input-label">Interests</label>
+        <input type="text" class="interests-input">
+      </article>
     </article>
     <article class="buttons">
-      <button class="post-button">Add Info</button>
+      <button class="add-info-button">Add Info</button>
+      <button class="post-button hidden">Submit Info to API</button>
       <button class="delete-button">Delete Info by ID</button>
       <button class="get-user">Find Info by ID</button>
     </article>
   </section>
   <section class="info-display">
     <h2 class="info-display-header">API Information Display</h2>
-    <article class="card">
-    </article>
-    
   </section>
   <script type="text/javascript" src="./script.js"></script>
 </body>
