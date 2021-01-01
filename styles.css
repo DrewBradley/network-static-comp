@@ -2,6 +2,7 @@ body {
   max-width: 1000px;
   margin: 0;
   font-family: Arial, Helvetica, sans-serif; 
+  background-color: #D2E1EE;
 }
 
 .hidden {
@@ -9,6 +10,7 @@ body {
 }
 
 .nav {
+  box-shadow: 0px 0px 6px -2px #000000;
   height: 100%;
   width: 30%;
   background-color: #344966;
@@ -76,6 +78,8 @@ label {
 }
 
 .card {
+  border: 1px solid black;
+  box-shadow: 0px 0px 6px -2px #000000;
   margin: 5%;
   background-color: #344966;
   font-size: x-large;
@@ -86,13 +90,14 @@ label {
 .card-name {
   background-color: #b4cded;
   align-items: center;
-  border-radius: 10px 10px 0 0;
+  border-radius: 9px 9px 0 0;
   margin: 0;
   padding: 9%;
 }
 
 .card-id {
   background-color: hsla(0, 0%, 100%, 0.5);
+  border: 1px solid black;
   font-size: small;
   font-weight: 800;
   text-align: center;
@@ -122,4 +127,21 @@ label {
 }
 .grid5 {
   grid-area: 3 / 2 / 3 / 2;
+}
+
+@media screen and (max-width: 480px) {
+  .nav {
+    top: 0;
+    height: auto;
+    width: 100%;
+  }
+
+  .info-display {
+    position: relative;
+    display: block;
+    margin-left: 0;
+    margin-top: 305px;
+    height: auto;
+    width: 100%;
+  }
 }
