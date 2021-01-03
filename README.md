@@ -14,4 +14,5 @@
 - To find info or delete info, select the corresponding ID.
 
 ## Images
-![Show Data](https://media.giphy.com/media/860xrZtWbLGigp9xjV/giphy.gif)
+![Mobile View](https://media.giphy.com/media/cX41Xkf4W6XUBMZ8Gc/giphy.gif)
+![Desktop View](https://media.giphy.com/media/jj6zLJnjpu3gYLbEtU/giphy.gif)
